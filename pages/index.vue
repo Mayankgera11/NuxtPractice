@@ -1,6 +1,6 @@
 <script setup>
-const { sayHello } = UseUtils();
-sayHello();
+const { $sayHello } = useNuxtApp();
+$sayHello("mayank");
 </script>
 
 <template>
