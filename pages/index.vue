@@ -1,10 +1,12 @@
 <script setup>
-const { $sayHello } = useNuxtApp();
-$sayHello("mayank");
+definePageMeta({
+  middleware: "auth",
+});
 </script>
 
 <template>
   <div>
+    <ContentDoc />
     <ProfileHeader />
     <Alert />
     <Profile />

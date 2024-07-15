@@ -7,10 +7,12 @@ export default defineNuxtConfig({
     "@": resolve(__dirname, "/"),
   },
   css: ["~/assets/main.scss"],
+  modules: ["@nuxt/content", "@pinia/nuxt"],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+  // ssr: false,
 });
