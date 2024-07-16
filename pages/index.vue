@@ -2,15 +2,17 @@
 definePageMeta({
   middleware: "auth",
 });
-const counter = useCounter();
+import { useCounterStore } from "~/stores/myStore";
+// const counter = useCounter();
+const store = useCounterStore();
 </script>
 
 <template>
   <div>
     <div>
-      Counter :{{ counter }}
-      <button @cliick="counter++">+</button>
-      <button @cliick="counter--">-</button>
+      {{ store.count }}
+      <button @click="store.increment">+</button>
+      <button @click="store.decrement">-</button>
     </div>
 
     <ContentDoc />
