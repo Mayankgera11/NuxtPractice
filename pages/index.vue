@@ -1,18 +1,21 @@
 <script setup>
+const response = await $fetch("/api/hello");
+console.log(response);
+
 definePageMeta({
   middleware: "auth",
 });
 import { useCounterStore } from "~/stores/myStore";
 // const counter = useCounter();
-const store = useCounterStore();
+const { count, increment, decrement } = useCounterStore();
 </script>
 
 <template>
   <div>
     <div>
-      {{ store.count }}
-      <button @click="store.increment">+</button>
-      <button @click="store.decrement">-</button>
+      {{ count }}
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
     </div>
 
     <ContentDoc />
